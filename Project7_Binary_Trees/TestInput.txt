@@ -1,0 +1,71 @@
+I 
+OP123 
+Opal Ring          
+201  99
+I 
+FH473 
+Fur Hat            
+750  250 
+I 
+RB902 
+Ruby Ring          
+280  75
+I FC881 
+Fur Coat           
+600  125
+I 
+DP721 
+Diamond Pendant    
+92   11
+P 
+E
+S 
+FH473 
+100
+I 
+RB702 
+Ruby Necklace      
+110  40
+P 
+N 
+FH473
+S 
+DP721 
+4
+O 
+RB902 
+50
+P 
+E
+I 
+RE702 
+Ruby Earrings      
+100  35
+D 
+DN022 
+Diamond Necklace
+R 
+RB902 
+15
+D 
+OP123 
+Opal Ring
+D 
+DE456 
+Diamond Earrings
+S 
+HF473 
+7
+I 
+EM543 
+Emerald Bracelet   
+0    100
+D 
+DR356 
+Diamond Ring-1.5
+D 
+FH473 
+Fur Hat
+P 
+E
+Q

@@ -1,0 +1,212 @@
+             Micaiah Skolnick         CSC 36000     Section 11
+                Spring 2017                 Assignment #7
+---------------------------------- - ---------------------------------- - 
+
+Item ID Number LM677 successfully entered into database.
+--------------------------------------------------------------------
+Item ID Number SP198 successfully entered into database.
+--------------------------------------------------------------------
+Item ID Number FT088 successfully entered into database.
+--------------------------------------------------------------------
+Item ID Number HM222 successfully entered into database.
+--------------------------------------------------------------------
+Item ID Number LB532 successfully entered into database.
+--------------------------------------------------------------------
+Item ID Number GC119 successfully entered into database.
+--------------------------------------------------------------------
+Item ID Number SB993 successfully entered into database.
+--------------------------------------------------------------------
+Item ID Number RK552 successfully entered into database.
+--------------------------------------------------------------------
+Item ID Number GH332 successfully entered into database.
+--------------------------------------------------------------------
+Item ID Number WA022 successfully entered into database.
+--------------------------------------------------------------------
+Item ID Number DR777 successfully entered into database.
+--------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	               JAKE’S HARDWARE INVENTORY REPORT
+	Item             Item                    Quantity       Quantity
+	ID Number        Description             On hand        On Order
+--------------------------------------------------------------------
+    DR777            Drill 1/2 hp               16             34
+    FT088            Fertilizer 25lb Bag        75             30
+    GC119            Gasoline Can 5 gal         32             18
+    GH332            Garden Hose 50ft           50              0
+    HM222            Hammer                    187             13
+    LB532            Light Bulb 75 watt        309            181
+    LM677            Lawn Mower 3/4 hp          25              5
+    RK552            Leaf Rake                  34             26
+    SB993            Snow Blower                12              3
+    SP198            Shovel                    100             10
+    WA022            Washers 1/2 inch          398            122
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ERROR - Attempt to delete an item (CS882) not in the database list.
+--------------------------------------------------------------------
+Item ID Number TM567 successfully entered into database.
+--------------------------------------------------------------------
+ERROR - Attempt to insert a duplicate item SP198 into the database.
+--------------------------------------------------------------------
+Item ID Number GC119 successfully deleted from database.
+--------------------------------------------------------------------
+Quantity on Hand for item SB993 successfully updated.
+--------------------------------------------------------------------
+Quantity on Hand for item RK552 successfully updated.
+--------------------------------------------------------------------
+Quantity on order for item GH332 successfully updated.
+--------------------------------------------------------------------
+Item GC119 not in database. Print failed.
+--------------------------------------------------------------------
+Item ID Number WB202 successfully entered into database.
+--------------------------------------------------------------------
+Item ID Number FG081 successfully entered into database.
+--------------------------------------------------------------------
+Item ID Number DP199 successfully entered into database.
+--------------------------------------------------------------------
+Item ID Number SP198 successfully deleted from database.
+--------------------------------------------------------------------
+	Item             Item                    Quantity       Quantity
+	ID Number        Description             On hand        On Order
+--------------------------------------------------------------------
+    FG081            Fence Gate                 11              4
+--------------------------------------------------------------------
+Item ID Number RG555 successfully entered into database.
+--------------------------------------------------------------------
+Item ID Number NG111 successfully entered into database.
+--------------------------------------------------------------------
+Item ID Number SA333 successfully entered into database.
+--------------------------------------------------------------------
+Item ID Number FG081 successfully deleted from database.
+--------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	               JAKE’S HARDWARE INVENTORY REPORT
+	Item             Item                    Quantity       Quantity
+	ID Number        Description             On hand        On Order
+--------------------------------------------------------------------
+    DP199            Duct Pipe 6ft               2             48
+    DR777            Drill 1/2 hp               16             34
+    FT088            Fertilizer 25lb Bag        75             30
+    GH332            Garden Hose 50ft           50             50
+    HM222            Hammer                    187             13
+    LB532            Light Bulb 75 watt        309            181
+    LM677            Lawn Mower 3/4 hp          25              5
+    NG111            Nail Gun                   28              2
+    RG555            Garden Rake                16              9
+    RK552            Leaf Rake                  54              6
+    SA333            Sander 1/2 hp              33              2
+    SB993            Snow Blower                 9              3
+    TM567            Tape Measure 10ft         122             28
+    WA022            Washers 1/2 inch          398            122
+    WB202            Wheel Barrow               23              7
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-------------------------------- - 
+         | END OF PROGRAM OUTPUT | 
+-------------------------------- - 
