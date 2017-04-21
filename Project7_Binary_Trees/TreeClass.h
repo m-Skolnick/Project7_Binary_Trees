@@ -94,6 +94,7 @@ bool BinaryTreeClass::insertNode(NodeType newNode){
 				else {
 						//If new node ID is greater than current, follow the right pointer
 					if (currPtr->Rptr != NULL) {
+						currPtr->thread = NULL; //Set the thread of current pointer to NULL
 						currPtr = currPtr->Rptr;
 					}
 					else{
@@ -241,11 +242,16 @@ inline bool BinaryTreeClass::printEntireTree(){
 		}
 		while (currPtr != NULL) { //Print each node
 				//Print the contents of the current node
-			dataOUT << "    " << left << setw(17) << root->ID << setw(22) << root->Name
-				<< right << setw(7) << root->QOnHand << setw(15) << root->QOnOrder << endl;
+			dataOUT << "    " << left << setw(17) << currPtr->ID << setw(22) << currPtr->Name
+				<< right << setw(7) << currPtr->QOnHand << setw(15) << currPtr->QOnOrder << endl;
 			lineCount++; //Increment the line counter
 				//Move to the next node
-			
+			if (currPtr->Rptr == NULL) {
+				currPtr = currPtr->thread;
+			}
+			else {
+				currPtr = currPtr->Rptr;
+			}
 		}
 
 
