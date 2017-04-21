@@ -33,7 +33,6 @@ public:
 	BinaryTreeClass();
 	bool insertNode(NodeType);
 	bool printEntireTree();
-	void printEachNode(NodeType*);
 	void patchParent(NodeType*, NodeType*, NodeType*);
 	bool deleteNode(string);
 	bool operateOnNode(string, char, int);
@@ -94,12 +93,15 @@ bool BinaryTreeClass::insertNode(NodeType newNode){
 				else {
 						//If new node ID is greater than current, follow the right pointer
 					if (currPtr->Rptr != NULL) {
-						currPtr->thread = NULL; //Set the thread of current pointer to NULL
 						currPtr = currPtr->Rptr;
 					}
 					else{
 						currPtr->Rptr = newPtr;
-						newPtr->thread = threadToThis; //Set the thread of the new node
+						currPtr->thread = NULL; //Set the thread of current pointer to NULL
+							//As long as new node ID is less than thread Set the thread of the new node
+						if (newPtr->ID < threadToThis->ID) {
+							newPtr->thread = threadToThis; 
+						}
 						return true;
 					}
 				}
@@ -133,11 +135,11 @@ inline bool BinaryTreeClass::deleteNode(string IDtoSearch){
 		// Returns - A bool to indicate if node was deleted from tree
 		// Declare local pointers 
 	NodeType *delnode, *parnode, *node1, *node2, *node3;
-	bool found = false; // Declare flag to indicate if the node to be deleted was found  
-	delnode = RootPtr;// Set the pointers to start at the root
+	bool found = false; //Declare flag to indicate if the node to be deleted was found  
+	delnode = RootPtr;//Set the pointers to start at the root
 	parnode = NULL;
-	// Search the tree until node to be deleted is found, or end of tree is reached
-	while (found == false && delnode != NULL){	// Set flag to true if node is found
+	//Search the tree until node to be deleted is found, or end of tree is reached
+	while (found == false && delnode != NULL){	//Set flag to true if node is found
 		if (IDtoSearch == delnode->ID) {
 			found = true;
 		}
@@ -257,20 +259,6 @@ inline bool BinaryTreeClass::printEntireTree(){
 
 
 		return true;
-	}
-}
-//*****************************************************************************************************
-inline void BinaryTreeClass::printEachNode(NodeType *root) {
-		//Receives – The pointer to a node in the tree
-		//Task - Print each node in the tree
-		//Returns - Nothing
-	if (root != NULL) {
-		printEachNode(root->Lptr); //Recursively call left pointers
-			//Print the contents of the current node
-		dataOUT << "    " << left << setw(17) << root->ID  << setw(22) << root->Name 
-			 << right << setw(7) << root->QOnHand << setw(15) << root->QOnOrder << endl;
-		lineCount++; //Increment the line counter
-		printEachNode(root->Rptr); //Recursively call right pointers
 	}
 }
 //*****************************************************************************************************
