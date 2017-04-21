@@ -25,7 +25,7 @@ struct NodeType {
 		// The structure "NodeType" holds each inventory file.
 	int QOnHand, QOnOrder;
 	string ID,Name;
-	NodeType *Lptr,*Rptr,*parent;
+	NodeType *Lptr,*Rptr,*thread;
 };
 //*****************************************************************************************************
 class BinaryTreeClass {
@@ -54,7 +54,7 @@ bool BinaryTreeClass::insertNode(NodeType newNode){
 		// Returns - A bool to indicate operation success or failure
 		// Declare variables used in process
 	bool inserted = false;
-	NodeType  *newPtr, *currPtr;
+	NodeType  *newPtr, *currPtr, *threadToThis;
 	newPtr = new(NodeType);   
 		//First search the tree. If the node is found matching this ID, return false
 	if (searchForNode(newNode.ID)->ID != "NOT FOUND") {
@@ -68,24 +68,29 @@ bool BinaryTreeClass::insertNode(NodeType newNode){
 		newPtr->QOnHand = newNode.QOnHand;
 		newPtr->QOnOrder = newNode.QOnOrder;  
 			//Initialize left and right pointer of new node to null
-		newPtr -> Lptr = NULL;    
-		newPtr -> Rptr = NULL;      
+		newPtr->Lptr = NULL;    
+		newPtr->Rptr = NULL;  
+		newPtr->thread = NULL;
 		currPtr = RootPtr; //Set the current pointer to the root
+		threadToThis = RootPtr; //Set the thread ptr to the root
 		while (inserted == false){
 			if (currPtr == NULL){ //If there is not yet a root value, set current Ptr to root
 				RootPtr = newPtr;
 				return true; //Return true to indicate that the node was successfully added
 			}                                           
 			else{ //If tree already contained a node, add new node at correct location
-				if (newPtr->ID < currPtr ->ID) 
+				if (newPtr->ID < currPtr->ID) {
 					//If new node ID is less than current, follow the left pointer
+					threadToThis = currPtr; //Thread back to the current location
 					if (currPtr->Lptr != NULL) {
 						currPtr = currPtr->Lptr;
 					}
-					else{
+					else {
 						currPtr->Lptr = newPtr;
+						newPtr->thread = threadToThis; //Set the thread of the new node
 						return true;
 					}
+				}
 				else {
 						//If new node ID is greater than current, follow the right pointer
 					if (currPtr->Rptr != NULL) {
@@ -93,6 +98,7 @@ bool BinaryTreeClass::insertNode(NodeType newNode){
 					}
 					else{
 						currPtr->Rptr = newPtr;
+						newPtr->thread = threadToThis; //Set the thread of the new node
 						return true;
 					}
 				}
@@ -219,13 +225,31 @@ inline bool BinaryTreeClass::printEntireTree(){
 		//Task - Print each item in the tree
 		//Returns - A bool indicating whether operation was successful
 		//If there are no nodes in the tree, alert the user
-	if (RootPtr == NULL) {
+
+	NodeType *currPtr = new(NodeType);
+	currPtr = RootPtr;
+	if (currPtr == NULL) {
 		dataOUT << "There are no inventory items to print" << endl;
 		lineCount++;
 		return false;
 	}
 	else { //If tree is not empty, print each of the items in the tree
-		printEachNode(RootPtr);
+		
+
+		while (currPtr->Lptr != NULL) { //Set currPtr to the bottom left ptr of tree
+			currPtr = currPtr->Lptr;
+		}
+		while (currPtr != NULL) { //Print each node
+				//Print the contents of the current node
+			dataOUT << "    " << left << setw(17) << root->ID << setw(22) << root->Name
+				<< right << setw(7) << root->QOnHand << setw(15) << root->QOnOrder << endl;
+			lineCount++; //Increment the line counter
+				//Move to the next node
+			
+		}
+
+
+
 		return true;
 	}
 }
